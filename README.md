@@ -1,75 +1,49 @@
-# React + TypeScript + Vite
+# HireMe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+HireMe er et personlig webprosjekt som utforsker hvordan en jobbsøknad kan være mer enn en tradisjonell CV. Målet var å ha det gøy og leke meg med webutvikling, med en blanding av kreativitet og humor.
 
-Currently, two official plugins are available:
+Prosjektet er fortsatt under utvikling, og jeg lærer og tester nye ting underveis. Hvis du tilfeldigvis er en arbeidsgiver som har havnet her, håper jeg du liker det du ser!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Funksjoner
 
-## React Compiler
+- Interaktiv jobbsøknad med ja- og nei-spørsmål
+- CV og annen informasjon om meg
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Teknologier og verktøy
 
-## Expanding the ESLint configuration
+- **React** – bygging av brukergrensesnitt
+- **TypeScript** – typesikker JavaScript
+- **Vite** – utviklingsserver og byggeverktøy
+- **Tailwind CSS** – styling og responsivt design
+- **shadcn/ui** – gjenbrukbare UI-komponenter
+- **Git og GitHub** – versjonskontroll og lagring av prosjektet
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Kjøring av prosjektet
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+For å kjøre prosjektet lokalt:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Klon repoet:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+   ```bash
+   git clone https://github.com/guro-ni/hire-me.git
+   ```
 
-```
+2. Gå inn i prosjektmappen:
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+   ```bash
+   cd hire-me
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. Installer avhengighetene:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+   ```bash
+   npm install
+   ```
 
-```
+4. Start utviklingsserveren:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Åpne adressen som vises i terminalen i nettleseren.
