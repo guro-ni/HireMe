@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import Logo from './components/Logo'
 import { Checkbox } from '@/components/ui/checkbox';
+import { Button } from '@/components/ui/button';
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { HireMeSidebar } from "@/components/HireMeSidebar";
 import confetti from "canvas-confetti";
 import './App.css'
 
@@ -12,7 +15,11 @@ function App() {
 
   return (
     <main className="min-h-screen bg-rose-50 p-8">
-      <Logo />
+
+      {/* Header */}
+      <header className="fixed inset-x-0 top-0 z-50 flex h-20 items-center bg-rose-50 px-8">
+        <Logo />
+      </header>
 
       <section className="mt-12 flex min-h-[80vh] flex-col items-center justify-center gap-8 text-center">
         {!hired && (
@@ -118,10 +125,10 @@ function App() {
           </label>
         </div>
 
-        <div className="mt-4 h-14">
-          <button
+        <div className="mt-4 h-14">      
+          <Button
             type="button"
-            className={`rounded-full bg-pink-700 px-8 py-3 font-semibold text-pink-50 transition-all duration-300 hover:bg-pink-700 ${
+            className={`rounded-full bg-pink-700 px-8 py-6 font-semibold text-pink-50 transition-all duration-300 hover:bg-pink-800 ${
               answered
                 ? "translate-y-0 opacity-100"
                 : "pointer-events-none -translate-y-2 opacity-0"
@@ -134,26 +141,49 @@ function App() {
             aria-hidden={!answered}
           >
             Neste →
-          </button>
+          </Button>
         </div>
         </>
       )}
 
+      
       {hired && (
-        <div className="flex -translate-y-22 flex-col items-center gap-6">
-          <div className="text-8xl" role="img" aria-label="Konfetti">
-            🎉
+        <SidebarProvider defaultOpen={true}>
+          <div className="fixed inset-0 bg-rose-50">
+
+            {/* Sidebar og innhold under headeren */}
+            <div className="fixed inset-x-0 bottom-0 top-20">
+
+              <HireMeSidebar />
+
+              {/* Hovedinnhold */}
+              <main className="flex h-full flex-col items-center justify-center gap-6 overflow-y-auto p-8 text-center">
+
+                <div className="text-8xl" role="img" aria-label="Konfetti">
+                  🎉
+                </div>
+
+                <h1 className="text-2xl font-bagel text-neutral-800 md:text-5xl">
+                  Gratulerer med ny ansatt!
+                </h1>
+
+                <p className="text-xl text-neutral-700">
+                  Gleder meg til å jobbe med dere!
+                </p>
+
+                <Button
+                  className="rounded-full bg-pink-700 px-8 py-6 font-semibold text-pink-50 hover:bg-pink-800"
+                  onClick={() => console.log("Åpne CV")}
+                >
+                  Bli kjent med deres nye ansatt →
+                </Button>
+
+              </main>
+            </div>
           </div>
-
-          <h1 className="text-2xl font-bagel text-neutral-800 md:text-5xl">
-            Gratulerer med ny ansatt!
-          </h1>
-
-          <p className="text-xl text-neutral-700">
-            Gleder meg til å jobbe med dere!
-          </p>
-        </div>
+        </SidebarProvider>
       )}
+
       </section>
     </main>
   );
