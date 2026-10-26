@@ -15,12 +15,16 @@ import {
 } from "lucide-react"
 
 const menuItems = [
+  { title: "CV", icon: FileText },
   { title: "Mine interesser", icon: Palette },
   { title: "Tinderprofil", icon: Heart },
-  { title: "CV", icon: FileText },
 ]
 
-export function HireMeSidebar() {
+type HireMeSidebarProps = {
+  onNavigate: (page: string) => void;
+};
+
+export function HireMeSidebar({ onNavigate }: HireMeSidebarProps) {
   return (
     <Sidebar
       collapsible="offcanvas"
@@ -43,7 +47,18 @@ export function HireMeSidebar() {
           <SidebarMenu>
             {menuItems.map((item) => (
               <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton className="text-base text-neutral-800 hover:bg-rose-100 px-4 py-5">
+                <SidebarMenuButton
+                  onClick={() =>
+                    onNavigate(
+                      item.title === "CV"
+                        ? "cv"
+                        : item.title === "Mine interesser"
+                          ? "interests"
+                          : "tinder"
+                    )
+                  }
+                  className="text-base text-neutral-800 hover:bg-rose-100 px-4 py-5"
+                >
                   <item.icon />
                   <span>{item.title}</span>
                 </SidebarMenuButton>
