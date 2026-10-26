@@ -53,7 +53,7 @@ export function HireMeSidebar({ onNavigate }: HireMeSidebarProps) {
                       item.title === "CV"
                         ? "cv"
                         : item.title === "Mine interesser"
-                          ? "interests"
+                          ? "interesser"
                           : "tinder"
                     )
                   }

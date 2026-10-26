@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { HireMeSidebar } from "@/components/HireMeSidebar";
 import { CV } from "@/components/CV";
+import { MineInteresser } from "@/components/MineInteresser";
+import { Tinderprofil } from '@/components/Tinderprofil';
 import confetti from "canvas-confetti";
 import './App.css'
 
@@ -207,6 +209,9 @@ function App() {
                   <div className="w-full px-4 pt-0 min-[1200px]:pl-64">
                     <CV />
                   </div>}
+
+                  {activePage === "interesser" && <MineInteresser />}
+                  {activePage === "tinder" && <Tinderprofil />}
                 </main>
               </div>
             </div>
