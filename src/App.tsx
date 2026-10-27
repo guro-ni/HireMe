@@ -176,7 +176,7 @@ function App() {
             <div className="min-h-screen w-full bg-rose-50">
 
               {/* Sidebar og innhold under headeren */}
-              <div className="relative min-h-screen pt-20">
+              <div className="relative min-h-screen pt-12">
 
                 <HireMeSidebar onNavigate={setActivePage}/>
 
@@ -211,7 +211,12 @@ function App() {
                   </div>}
 
                   {activePage === "interesser" && <MineInteresser />}
-                  {activePage === "tinder" && <Tinderprofil />}
+
+                  {activePage === "tinder" && 
+                  <div className="w-full px-4 pt-0 -mt-12 min-[1200px]:pl-64">
+                   <Tinderprofil /> 
+                  </div>}
+
                 </main>
               </div>
             </div>

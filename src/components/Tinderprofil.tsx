@@ -1,12 +1,15 @@
 export function Tinderprofil() {
   return (
-    <div className="flex min-h-[calc(50vh-5rem)] w-full flex-col items-center justify-center gap-4 text-center">
-      <h1 className="text-3xl font-bold text-neutral-800">
-        Tinderprofil
-      </h1>
-      <p className="text-lg text-neutral-500">
-        Denne siden er under utvikling. Kommer snart! 💗
-      </p>
-    </div>
+    <main className="-mt-8 flex w-full justify-center">
+      <div className="w-full">
+        <iframe
+          className="aspect-video w-full"
+          src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1"
+          title="Never Gonna Give You Up"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    </main>
   );
 }
