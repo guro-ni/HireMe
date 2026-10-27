@@ -129,8 +129,30 @@ export function CV() {
         </div>
 
         <div className="space-y-5 pl-9">
-        
+
         {/*Arbeidserfaring 1*/}
+        <div>
+        <h3 className="font-semibold text-lg text-neutral-800">
+           Fagansvarlig,
+            <span className="font-normal text-neutral-500">
+            {" "}Eksamensportalen.no
+            </span>
+        </h3>
+        <p className="mt-1 text-sm text-neutral-700">
+            Oktober 2026 -
+        </p>
+        <ul className="mt-2 list-disc space-y-2 px-4 pl-8 text-sm leading-relaxed text-neutral-600">
+            <li>
+                Utvikler og kvalitetssikrer eksamensrelevante oppgaver og løsningsforslag i NTNU-emnene 
+                MFEL1010 – Innføring i medisin for ikke-medisinere og TTM4135 – Anvendt kryptografi og nettverkssikkerhet.
+            </li>
+            <li>
+                Har faglig ansvar for korrekthet, pensumrelevans og kontinuerlig oppdatering av oppgaveinnhold.
+            </li>
+        </ul>
+        </div>
+        
+        {/*Arbeidserfaring 2*/}
         <div>
         <h3 className="font-semibold text-lg text-neutral-800">
             Assistent/sommervikar,
@@ -156,7 +178,7 @@ export function CV() {
         </ul>
         </div>
 
-        {/*Arbeidserfaring 2*/}
+        {/*Arbeidserfaring 3*/}
         <div>
         <h3 className="font-semibold text-lg text-neutral-800">
             Pleiemedarbeider,
@@ -177,7 +199,7 @@ export function CV() {
         </ul>
         </div>
 
-        {/*Arbeidserfaring 3*/}
+        {/*Arbeidserfaring 4*/}
         <div>
         <h3 className="font-semibold text-lg text-neutral-800">
             Barnehagemedarbeider,
@@ -198,7 +220,7 @@ export function CV() {
         </ul>
         </div>
 
-        {/*Arbeidserfaring 4*/}
+        {/*Arbeidserfaring 5*/}
         <div>
         <h3 className="font-semibold text-lg text-neutral-800">
             Butikkmedarbeider og vaskehjelp,
